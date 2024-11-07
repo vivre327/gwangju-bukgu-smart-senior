@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/* Update 2024-03-14 */
 /*--- common ---*/
 *,
 *::before,
@@ -7,111 +6,20 @@
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
 }
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, 
+samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, 
+article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
   word-break: break-all;
 }
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section,
-main {
+article, aside, details, figcaption, figure, footer, header, hgroup, menu,nav, section, main {
   display: block;
 }
-ol,
-ul {
+ol, ul {
   list-style: none;
 }
-a,
-button {
+a, button {
   cursor: pointer;
 }
 a {
@@ -151,15 +59,51 @@ img {
   font-weight: 800;
   src: url("../font/NanumSquareEB.woff") format("woff");
 }
+
+:root {
+  /* Primary Colors */
+  --color-primary: #5672ED;         /* 메인 브랜드 컬러 */
+  --color-primary-accent: #367DFF;  /* 포인트 컬러 */
+  --color-primary-light: #75B0FF;   /* 보조 컬러 */
+    
+  /* Text Colors */
+  --color-text-100: #999999;
+  --color-text-200: #666666;
+  --color-text-300: #555555;
+  --color-text-400: #111111;
+  --color-text-500: #000000;
+
+  /* Gray Scale Colors */
+  --color-gray-100: #F1F5F8;
+  --color-gray-150: #EEEEEE;
+  --color-gray-200: #E8E8E8;
+  --color-gray-300: #DDDDDD;
+  --color-gray-350: #CCCCCC;
+  --color-gray-400: #CACACA;
+  --color-gray-500: #AAAAAA;
+
+  /* 특수 배경 색상 */
+  --color-bg-blue: #E6EAF5;
+  
+  /* System Colors */
+  --color-system-error: #E72D2D;
+  --color-system-warning: #F39800;
+  
+  /* Base Colors */
+  --color-white: #FFFFFF;
+ }
+
 body,
 button {
   font-family: "NanumSquare", sans-serif;
   font-weight: 400;
 }
+
 html,
 body {
   height: 100%;
 }
+
 .a11yHidden {
   overflow: hidden;
   position: absolute;
@@ -176,13 +120,17 @@ body {
 .wrapper {
   min-width: 1920px;
   min-height: 100%;
-  background-color: #f1f5f8;
+  background-color: var(--color-gray-100);
 }
+
+/*----------------------
+  Header
+----------------------*/
 .header {
   position: relative;
   width: 100%;
   height: 100px;
-  background-color: #fff;
+  background-color: var(--color-white);
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
   z-index: 10;
 }
@@ -216,7 +164,7 @@ body {
   font-size: 40px;
   font-weight: 800;
   line-height: 1;
-  color: #5672ed;
+  color: var(--color-primary);
 }
 .header_date {
   margin-left: auto;
@@ -229,12 +177,15 @@ body {
 .header_date .hd_time b {
   font-weight: 800;
 }
+.header_item {
+
+}
 .header_left .btn_prev_page {
   width: 160px;
   height: 72px;
   border-radius: 60px;
-  border: 1px solid #ddd;
-  background: #fff url("../images/icon/back.svg") center left 20px / 48px
+  border: 1px solid var(--color-gray-300);
+  background: var(--color-white) url("../images/icon/back.svg") center left 20px / 48px
     no-repeat;
   padding-left: 32px;
 }
@@ -243,7 +194,7 @@ body {
   top: 1px;
   font-size: 26px;
   font-weight: 800;
-  color: #666;
+  color: var(--color-text-200);
 }
 .header_title {
   position: absolute;
@@ -254,7 +205,7 @@ body {
   line-height: 1;
   letter-spacing: -2px;
   font-weight: 800;
-  color: #111;
+  color: var(--color-text-400);
 }
 .header_user {
   text-align: right;
@@ -264,14 +215,14 @@ body {
   line-height: 1;
   letter-spacing: -2px;
   font-weight: 800;
-  color: #111;
+  color: var(--color-text-400);
 }
 .header_user .btn_logout {
   position: relative;
   font-size: 26px;
   letter-spacing: -2px;
   font-weight: 800;
-  color: #367dff;
+  color: var(--color-primary-accent);
   border: 0;
   background-color: transparent;
   margin-left: 30px;
@@ -284,7 +235,7 @@ body {
   left: 0px;
   width: 1px;
   height: 30px;
-  background: #ddd;
+  background: var(--color-gray-300);
 }
 .container {
   position: relative;
@@ -315,7 +266,7 @@ body {
   line-height: 54px;
   letter-spacing: -2px;
   font-weight: 800;
-  color: #5672ed;
+  color: var(--color-primary);
 }
 .main_intro .mi_txt {
   font-size: 50px;
@@ -331,10 +282,10 @@ body {
 .mml_btns button {
   width: 200px;
   height: 100px;
-  background-color: #e6eaf5;
+  background-color: var(--color-bg-blue);
   border-radius: 20px;
   border: 0;
-  color: #5672ed;
+  color: var(--color-primary);
   font-size: 30px;
   letter-spacing: -2px;
   font-weight: 800;
@@ -376,7 +327,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100%;
-  color: #fff;
+  color: var(--color-white);
   font-size: 30px;
   line-height: 42px;
   font-weight: 800;
@@ -406,7 +357,7 @@ figure.fig_05 {
 .main_menu_link .mml_txt {
   margin: 16px auto 0;
   display: block;
-  color: #fff;
+  color: var(--color-white);
   font-size: 42px;
   line-height: 1;
   letter-spacing: -2px;
@@ -430,7 +381,7 @@ figure.fig_05 {
 }
 .main_area_aside {
   width: 360px;
-  background-color: #e6eaf5;
+  background-color: var(--color-bg-blue);
   right: 0;
   bottom: 0;
   position: absolute;
@@ -487,7 +438,7 @@ figure.fig_05 {
   font-weight: 700;
 }
 .weather_info .temp2 .lowest {
-  color: #367dff;
+  color: var(--color-primary-accent);
 }
 .weather_info .temp2 .lowest::after {
   content: "";
@@ -496,10 +447,10 @@ figure.fig_05 {
   right: -1px;
   width: 1px;
   height: 20px;
-  background: #aaa;
+  background: var(--color-gray-500);
 }
 .weather_info .temp2 .highest {
-  color: #e72d2d;
+  color: var(--color-system-error);
 }
 
 .main_bus {
@@ -525,7 +476,7 @@ figure.fig_05 {
   word-spacing: -2px;
   font-weight: 800;
   line-height: 34px;
-  color: #999;
+  color: var(--color-text-100);
 }
 .mb_bus_list {
   margin-top: 20px;
@@ -538,30 +489,30 @@ figure.fig_05 {
   justify-content: space-between;
   height: 100px;
   padding: 0 30px;
-  background-color: #fff;
+  background-color: var(--color-white);
   margin-bottom: 10px;
   border-radius: 20px;
 }
 .mb_bus_item.mb_bg_active {
-  background-color: #5672ed;
+  background-color: var(--color-primary);
 }
 .mb_bus_number {
   font-size: 44px;
   letter-spacing: -2px;
-  color: #555;
+  color: var(--color-text-300);
   font-weight: 800;
 }
 .mb_bus_item.mb_bg_active .mb_bus_number,
 .mb_bus_item.mb_bg_active .mb_bus_time,
 .mb_bus_item.mb_bg_active .mb_bus_type {
-  color: #fff;
+  color: var(--color-white);
 }
 .mb_bus_time,
 .mb_bus_type {
   font-size: 24px;
   line-height: 34px;
   letter-spacing: -2px;
-  color: #555;
+  color: var(--color-text-300);
   text-align: right;
   font-weight: 700;
 }
@@ -575,7 +526,7 @@ figure.fig_05 {
   font-weight: 800;
   letter-spacing: -1px;
   word-spacing: -2px;
-  color: #555;
+  color: var(--color-text-300);
   text-align: center;
 }
 .mb_btn_rego {
@@ -588,8 +539,8 @@ figure.fig_05 {
   font-weight: 700;
   letter-spacing: -1px;
   border: 0;
-  background-color: #5672ed;
-  color: #fff;
+  background-color: var(--color-primary);
+  color: var(--color-white);
 }
 
 .main_license {
@@ -623,10 +574,10 @@ figure.fig_05 {
   margin-top: 10px;
   padding-top: 65px;
   border-radius: 12px;
-  border: 1px solid #cacaca;
+  border: 1px solid var(--color-gray-400);
 }
 .main_setting button span {
-  color: #555;
+  color: var(--color-text-300);
   font-size: 18px;
   font-weight: 800;
   letter-spacing: -1px;
@@ -657,8 +608,8 @@ figure.fig_05 {
 }
 .gird_card {
   overflow-y: auto;
-  background-color: #fff;
-  border: 1px solid #ddd;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-300);
   border-radius: 20px;
 }
 /* min-height:840px; height:100%; 화면 전체 스크롤 */
@@ -721,7 +672,7 @@ figure.fig_05 {
   font-weight: 800;
   line-height: 1;
   letter-spacing: -2px;
-  color: #111;
+  color: var(--color-text-400);
   text-align: center;
   word-break: keep-all;
 }
@@ -738,7 +689,7 @@ figure.fig_05 {
   font-size: 32px;
 }
 .gird_card h3 b {
-  color: #5672ed;
+  color: var(--color-primary);
   font-weight: 800;
   padding-right: 10px;
 }
@@ -770,7 +721,7 @@ figure.fig_05 {
   line-height: 44px;
   letter-spacing: -2px;
   text-align: center;
-  color: #555;
+  color: var(--color-text-300);
   word-break: keep-all;
 }
 .colum3_row1 .gird_card_txt {
@@ -818,7 +769,7 @@ figure.fig_05 {
   width: 1200px;
   min-height: 800px;
   padding: 80px 60px 60px;
-  background-color: #fff;
+  background-color: var(--color-white);
   border-radius: 40px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
@@ -842,12 +793,12 @@ figure.fig_05 {
   text-align: center;
 }
 .color_b {
-  color: #5672ed;
+  color: var(--color-primary);
 }
 .dl_result_temper {
   height: 386px;
   margin: 40px auto;
-  background-color: #f1f5f8;
+  background-color: var(--color-gray-100);
   text-align: center;
 }
 .dl_result_temper dt {
@@ -878,16 +829,16 @@ figure.fig_05 {
   font-weight: 800;
   border-radius: 12px;
   border: 0;
-  color: #fff;
+  color: var(--color-white);
 }
 .btn_gray {
-  background-color: #aaaaaa;
+  background-color: var(--color-gray-500);
 }
 .btn_orange {
-  background-color: #f39800;
+  background-color: var(--color-system-warning);
 }
 .btn_blue {
-  background-color: #5672ed;
+  background-color: var(--color-primary);
 }
 
 .select_options_sugar {
@@ -911,10 +862,10 @@ figure.fig_05 {
   font-size: 40px;
   letter-spacing: -2px;
   font-weight: 800;
-  background-color: #e6eaf5;
-  color: #5672ed;
+  background-color: var(--color-bg-blue);
+  color: var(--color-primary);
 }
 .option_btn.selected {
-  background-color: #5672ed;
-  color: #fff;
+  background-color: var(--color-primary);
+  color: var(--color-white);
 }
