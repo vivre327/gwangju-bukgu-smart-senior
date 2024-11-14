@@ -14,11 +14,11 @@
     <header class="conf_header">
       <div class="conf_header_inner">
         <h1 class="logo">
-          <span class="ci">광주시 북구</span>
+          <img src="../assets/images/icon/logo.svg" alt="광주시 북구">
           <b>스마트경로당</b>
         </h1>
         <div class="header_item">
-          <button class="header_close_btn"><span class="a11yHidden">닫기</span></button>
+          <button class="header_close_btn"><span class="a11yHidden">팝업닫기</span></button>
         </div>
       </div>
     </header>
@@ -54,19 +54,34 @@
 
         <!-- 회의제목 -->
         <div class="form_element">
-          <label class="form_label a11yHidden" for="text-input-01">회의제목</label>
+          <label class="form_label a11yHidden" for="meeting-title">회의제목</label>
           <div class="form_control">
-            <input type="text" id="text-input-01" class="input_text" placeholder="" value="광주 북구 경로당에서 생성한 회의">
+            <input 
+              type="text" 
+              id="meeting-title"
+              class="input_text" 
+              value="광주 북구 경로당에서 생성한 회의"
+              readonly
+              disabled
+            >
           </div>
         </div>
 
         <!-- 시작시간 -->
         <div class="form_element time">
-          <label class="form_label" for="text-input-02">시작시간</label>
+          <label class="form_label" for="selected-date">시작시간</label>
           <div class="form_control">
-            <input type="text" id="text-input-01" class="input_text" placeholder="" value="YYYY.MM.DD">
+            <input 
+              type="text" 
+              id="selected-date" 
+              class="input_text" 
+              value="YYYY.MM.DD" 
+              readonly 
+              disabled
+            >
           </div>
           <div class="form_group">
+            <!-- 시간 -->
             <div class="form_control counter" role="spinbutton">
               <button
                 type="button"
@@ -76,12 +91,14 @@
                 <span class="a11yHidden">감소</span>
               </button>
               <input
-                id="default1"
+                id="hour-counter"
                 class="input_counter"
                 type="text"
                 readonly
                 value="12"
-                data-value="12"
+                data-min="0"
+                data-max="23"
+                data-step="1"
               >
               <button
                 type="button"
@@ -91,7 +108,10 @@
                 <span class="a11yHidden">증가</span>
               </button>
             </div>
+
             <p class="time_devider"> : </p>
+
+            <!-- 분 -->
             <div class="form_control counter" role="spinbutton">
               <button
                 type="button"
@@ -101,12 +121,14 @@
                 <span class="a11yHidden">감소</span>
               </button>
               <input
-                id="default1"
+                id="minute-counter"
                 class="input_counter"
                 type="text"
                 readonly
                 value="00"
-                data-value="00"
+                data-min="00"
+                data-max="59"
+                data-step="1"
               >
               <button
                 type="button"
@@ -121,7 +143,7 @@
 
         <!-- 회의시간 -->
         <div class="form_element col2">
-          <label class="form_label" for="default1">회의시간</label>
+          <label class="form_label" for="meeting-duration">회의시간</label>
           <div class="form_control counter" role="spinbutton">
             <button 
               type="button"
@@ -131,12 +153,14 @@
               <span class="a11yHidden">감소</span>
             </button>
             <input 
-              id="default1" 
+              id="meeting-duration" 
               class="input_counter"
               type="text"
               readonly
-              value="24시간"
-              data-value="1"
+              value="1시간"
+              data-min="1"
+              data-max="3"
+              data-step="1"
             >
             <button 
               type="button"
@@ -150,7 +174,7 @@
 
         <!-- 참여경로당수 -->
         <div class="form_element col2">
-          <label class="form_label" for="default1">참여경로당수</label>
+          <label class="form_label" for="center-count">참여경로당수</label>
           <div class="form_control counter" role="spinbutton">
             <button 
               type="button"
@@ -160,12 +184,14 @@
               <span class="a11yHidden">감소</span>
             </button>
             <input 
-              id="default1" 
+              id="center-count" 
               class="input_counter"
               type="text"
               readonly
               value="30곳"
-              data-value="1"
+              data-min="10"
+              data-max="30"
+              data-step="10"
             >
             <button 
               type="button"
@@ -177,8 +203,8 @@
           </div>
         </div>
         <div class="btn_wrap actions">
-          <button class="btn_action btn_default btn_large">취소</button>
-          <button class="btn_action btn_primary btn_large">생성</button>
+          <button type="button" class="btn_action btn_default btn_large">취소</button>
+          <button type="submit" class="btn_action btn_primary btn_large">생성</button>
         </div>
       </section>
     </div>

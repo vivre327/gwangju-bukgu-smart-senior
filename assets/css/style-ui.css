@@ -157,7 +157,7 @@ body {
   vertical-align: middle;
   width: 173px;
   height: 64px;
-  background: url("../images/icon/logo.svg") 0 0 / 172px auto no-repeat;
+  background: url("../images/icon/logo_sacheon.svg") 0 0 / 172px auto no-repeat;
   font-size: 0;
 }
 .header_inner .logo b {
@@ -352,6 +352,9 @@ figure.fig_04 {
 }
 figure.fig_05 {
   background-image: url("../images/icon/btn05.png");
+}
+figure.fig_06 {
+  background-image: url("../images/icon/btn06.png");
 }
 .main_menu_link .mml_txt {
   margin: 16px auto 0;
@@ -885,7 +888,6 @@ figure.fig_05 {
   position: relative;
   width: 100%;
   height: 100px;
-  height: clamp(100px, 13.889vw, 150px);
   background-color: var(--color-white);
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
   z-index: 10;
@@ -895,10 +897,8 @@ figure.fig_05 {
   justify-content: center;
   align-items: center;
   height: 100px;
-  height: clamp(100px, 13.889vw, 150px);
   margin: 0 auto;
   padding: 14px 32px;
-  padding: clamp(14px, 1.944vw, 20px) 32px;
   position: relative;
 }
 .conf_header_inner .logo {
@@ -907,35 +907,22 @@ figure.fig_05 {
   position: relative;
   margin-right: auto;
 }
+.conf_header_inner .logo img {
+  width: 269px;
+  height: 100%;
+}
 .conf_header_inner .header_item {
   display: flex;
 }
 .conf_title {
   flex: 1;
   padding-right: 56px;
-  padding-right: clamp(56px, 7.778vw, 84px);
   font-size: 32px;
-  font-size: clamp(32px, 4.444vw, 48px);
   font-weight: 800;
   line-height: 1;
   letter-spacing: -2px;
   text-align: center;
   color: var(--color-text-400);
-}
-/* .conf_header_inner .logo span {
-  display: inline-block;
-  vertical-align: middle;
-  width: 37.5vw;
-  height: auto;
-  background: url("../images/icon/logo.svg") 0 0 / 172px auto no-repeat;
-  font-size: 0;
-  } */
-.conf_header_inner .logo span {
-  display: inline-block;
-  width: 269px;
-  height: 73px;
-  background: url("../images/icon/logo.svg") 0 0 / contain no-repeat;
-  font-size: 0;
 }
 .conf_header_inner .logo b {
   display: inline-block;
@@ -946,7 +933,7 @@ figure.fig_05 {
   line-height: 1;
   color: var(--color-primary);
   position: relative;
-  top: -8px;
+  top: -10px;
 }
 .header_close_btn {
   display: inline;
@@ -984,14 +971,13 @@ figure.fig_05 {
   display: inline;
   width: 56px;
   height: 56px;
-  width: clamp(56px, 7.778vw, 84px);
-  height: clamp(56px, 7.778vw, 84px);
   margin: 0;
   padding: 0;
   border: none;
   background: none;
   text-align: inherit;
   text-decoration: none;
+  text-indent: -9999px;
   outline: none;
   position: relative;
   background: url("../images/icon/ico_prev.svg") center / cover no-repeat;
@@ -1171,12 +1157,9 @@ figure.fig_05 {
 }
 .btn_large {
   height: 120px;
-  height: clamp(120px, 16.666vw, 180px);
   margin-right: 16px;
   font-size: 40px;
-  font-size: clamp(40px, 5.555vw, 64px);
   border-radius: 16px;
-  border-radius: clamp(16px, 2.222vw, 32px);
 }
 
 /* Button Colors */
@@ -1261,7 +1244,6 @@ figure.fig_05 {
 .conf_popup_header h3 {
   flex: 1;
   font-size: 40px;
-  font-size: clamp(40px, 5.555vw, 58px);
   font-weight: 800;
   line-height: 46px;
   letter-spacing: -2px;
@@ -1271,8 +1253,6 @@ figure.fig_05 {
   display: inline;
   width: 48px;
   height: 48px;
-  width: clamp(48px, 6.666vw, 64px);
-  height: clamp(48px, 6.666vw, 64px);
   margin: 0;
   padding: 0;
   border: none;
@@ -1288,8 +1268,6 @@ figure.fig_05 {
   display: block;
   width: 4px;
   height: 46px;
-  width: clamp(4px, 0.555vw, 6px);
-  height: clamp(46px, 6.388vw, 64px);
   border-radius: 999px;
   background-color: var(--color-text-400);
   position: absolute;
@@ -1313,7 +1291,6 @@ figure.fig_05 {
 .form_element {
   display: grid;
   margin-bottom: 40px;
-  margin-bottom: clamp(40px, 5.555vw, 60px);
 }
 .form_element.col2 {
   grid-template-columns: 1fr 1fr;
@@ -1325,7 +1302,6 @@ figure.fig_05 {
   display: inline-flex;
   align-items: center;
   font-size: 30px;
-  font-size: clamp(30px, 4.166vw, 44px);
   font-weight: 800;
   letter-spacing: -2px;
   text-align: left;
@@ -1340,7 +1316,9 @@ figure.fig_05 {
 .form_group {
   display: flex;
   margin-top: 30px;
-  margin-top: clamp(30px, 4.166vw, 40px);
+}
+.form_element.time .form_group {
+  justify-content: flex-end;
 }
 .form_group .counter {
   min-width: initial;
@@ -1352,8 +1330,10 @@ figure.fig_05 {
 .counter {
   display: flex;
   align-items: stretch;
+}
+.form_element.col2 .counter {
   min-width: 307px;
-  min-width: clamp(307px, 42.361vw, 400px);
+  margin-left: auto;
 }
 [class*="input_"] {
   font-family: inherit;
@@ -1363,11 +1343,10 @@ figure.fig_05 {
   flex: 1 1 auto;
   width: 1%;
   height: 80px;
-  height: clamp(80px, 11.111vw, 120px);
   margin: 0;
   font-size: 30px;
-  font-size: clamp(30px, 4.166vw, 44px);
   font-weight: 700;
+  line-height: 2.8;
   letter-spacing: -2px;
   text-align: center;
   color: var(--color-text-400);
@@ -1379,7 +1358,6 @@ figure.fig_05 {
   align-items: center;
   justify-content: center;
   width: 88px;
-  width: clamp(88px, 12.222vw, 120px);
   height: 100%;
   background-color: var(--color-primary-light);
   border: none;
@@ -1392,19 +1370,15 @@ figure.fig_05 {
   display: block;
   width: 40px;
   height: 40px;
-  width: clamp(40px, 5.555vw, 52px);
-  height: clamp(40px, 5.555vw, 52px);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 .btn_decrement {
   border-radius: 16px 0 0 16px;
-  border-radius: clamp(16px, 2.222vw, 24px) 0 0 clamp(16px, 2.222vw, 24px);
 }
 .btn_increment {
   border-radius: 0 16px 16px 0;
-  border-radius: 0 clamp(16px, 2.222vw, 24px) clamp(16px, 2.222vw, 24px) 0;
 }
 .btn_decrement::after {
   background-image: url("../images/icon/ico_conf_dec.svg");
@@ -1416,9 +1390,7 @@ figure.fig_05 {
   display: inline-flex;
   align-items: center;
   margin: 0 18px;
-  margin: 0 clamp(18px, 2.5vw, 24px);
   font-size: 30px;
-  font-size: clamp(30px, 4.166vw, 44px);
   font-weight: 700;
   letter-spacing: -2px;
   text-align: center;
@@ -1430,17 +1402,14 @@ figure.fig_05 {
   flex: 1;
   width: 100%;
   height: 80px;
-  height: clamp(80px, 11.111vw, 120px);
   padding: 0 30px;
   font-size: 30px;
-  font-size: clamp(30px, 4.166vw, 44px);
   font-weight: 700;
   letter-spacing: -2px;
   color: var(--color-text-400);
   border: 2px solid var(--color-gray-350);
   background-color: var(--color-gray-150);
   border-radius: 16px;
-  border-radius: clamp(16px, 2.222vw, 24px);
   outline: none;
 }
 
@@ -1448,8 +1417,21 @@ figure.fig_05 {
   Calendar Layout
 ----------------------*/
 .schedule_calendar {
+  height: 100%;
   margin-top: 40px;
   margin-top: clamp(40px, 5.555vw, 60px);
+  margin-bottom: 40px;
+  margin-bottom: clamp(40px, 5.555vw, 60px);
+}
+.sc_calendar {
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  flex: 1;
+}
+.sc_weeks {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .sc_week, .sc_weekdays {
   display: grid;
@@ -1485,14 +1467,24 @@ figure.fig_05 {
 .sc_day {
   display: flex;
   flex-direction: column;
-  height: 171px;
-  height: clamp(171px, 23.611vw, 255px);
+  height: auto;
+  /* height: 171px;
+  height: clamp(171px, 23.611vw, 255px); */
   padding: 20px 8px;
-  padding: clamp(20px, 2.778vw, 42px) clamp(8px, 1.111vw, 12px);
+  padding: clamp(16px, 2.7vw, 42px) clamp(8px, 1.111vw, 12px);
   position: relative;
   border: 1px solid var(--color-gray-200);
   background-color: var(--color-white);
   z-index: 1;
+}
+.sc_week:first-child .sc_day {
+  border-top: 0;
+}
+.sc_week:not(:last-child) .sc_day {
+  border-bottom: 0;
+}
+.sc_day:not(:nth-child(5n)) {
+  border-right: 0;
 }
 .day_num {
   margin-bottom: 10px;
@@ -1540,30 +1532,39 @@ figure.fig_05 {
   Vertical Layout: 1080 * 1920
 -------------------------------*/
 @media screen and (min-width: 1080px)  {
-
+  /* 필요시 추가 */
 }
 
 /*-------------------------------
   Horizontal Layout: 1280 * 720
 -------------------------------*/
-@media screen and (min-width: 1280px) {
+@media screen and (orientation: landscape) and (min-width: 1280px) {
   /* 화상회의 레이아웃 */
   .conf_header {
     height: 100px;
     height: clamp(60px, 5.208vw, 100px);
   }
   .conf_header_inner {
+    max-width: 1820px;
+    width: 94.792vw;
     height: 100px;
     height: clamp(60px, 5.208vw, 100px);
-    padding: 14px 50px;
-    padding: clamp(10px, 0.781vw, 14px) clamp(34px, 2.604vw, 50px);
+    padding: 14px 0;
+    padding: clamp(10px, 0.781vw, 14px) 0;
   }
-  .conf_header_inner .logo span {
-    width: 173px;
-    width: clamp(130px, 10.156vw, 173px);
-    height: 64px;
-    height: clamp(48px, 3.125vw, 64px);
-    background: url("../images/icon/logo.svg") 0 0 / 172px auto no-repeat;
+  .conf_header_inner .logo img {
+    max-width: 274px;
+    width: 14.270vw;
+    height: 100%;
+  }
+  .conf_header_inner .logo b {
+    padding-left: 10px;
+    padding-left: clamp(6px, 0.521vw, 10px);
+    padding-bottom: 8px;
+    padding-bottom: clamp(4px, 0.417vw, 8px);
+    font-size: 40px;
+    font-size: clamp(26px, 2.083vw, 40px);
+    top: 0;
   }
   .header_close_btn {
     width: 72px;
@@ -1578,10 +1579,14 @@ figure.fig_05 {
     height: clamp(30px, 2.812vw, 54px);
   }
   .conf_container {
-    max-width: 89.583vw;
-    width: 100%;
+    width: 89.583vw;
+    max-width: 1720px;
     margin: 0 auto;
     padding: 0;
+  }
+  .calendar .conf_container {
+    width: 100%;
+    max-width: initial;
   }
 
   /* 화상회의 메인 */
@@ -1598,7 +1603,8 @@ figure.fig_05 {
   .schedule_grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr); /* 2x2 그리드 생성 */
+    grid-template-rows: repeat(2, 1fr);
+     /* grid-template-rows: repeat(2, 304px); 행 높이 304로 고정 */
     gap: 30px;
     gap: clamp(20px, 1.562vw, 30px);
   }
@@ -1643,32 +1649,35 @@ figure.fig_05 {
     border-radius: 999px;
   }
   .btn_control {
-    /* 원본 160x72 비율: 2.22:1 유지 */
     width: 120px;
     height: 54px;
-    width: clamp(120px, 8.333vw, 160px);
-    height: clamp(54px, 3.75vw, 72px);
+    width: clamp(106px, 8.333vw, 160px);
+    height: clamp(48px, 3.75vw, 72px);
     font-size: 26px;
-    font-size: clamp(20px, 1.354vw, 26px);
-    line-height: 6.5;
+    font-size: clamp(16px, 1.354vw, 26px);
+    line-height: 8.5;
   }
   .btn_control.btn_secondary {
     padding-right: 24px;
     padding-right: clamp(16px, 1.25vw, 24px);
   }
+  .btn_control.btn_outline {
+    padding-left: 24px;
+    padding-left: clamp(16px, 1.25vw, 24px);
+  }
   [class*="btn_"] [class*="ico_"] {
     width: 40px;
-    width: clamp(32px, 2.083vw, 40px);
+    width: clamp(26px, 2.083vw, 40px);
     height: 40px;
-    height: clamp(32px, 2.083vw, 40px);
+    height: clamp(26px, 2.083vw, 40px);
     margin-right: 4px;
     margin-right: clamp(2px, 0.208vw, 4px);
   }
   .btn_control [class*="ico_"] {
     width: 40px;
-    width: clamp(24px, 2.083vw, 40px);
+    width: clamp(20px, 2.083vw, 40px);
     height: 40px;
-    height: clamp(24px, 2.083vw, 40px);
+    height: clamp(20px, 2.083vw, 40px);
   }
   .btn_control.btn_secondary [class*="ico_"] {
     margin-right: 0;
@@ -1678,41 +1687,109 @@ figure.fig_05 {
   .btn_action {
     flex: initial;
     width: 273px;
-    width: clamp(224px, 14.218vw, 273px);
+    width: clamp(182px, 14.218vw, 273px);
     height: 100px;
-    height: clamp(74px, 5.313vw, 100px);
+    height: clamp(70px, 5.313vw, 100px);
     font-size: 30px;
-    font-size: clamp(22px, 1.875vw, 30px);
+    font-size: clamp(20px, 1.563vw, 30px);
   }
   .btn_action [class*="ico_"] {
     margin-right: 8px;
-    margin-right: clamp(6px, 0.417vw, 8px);
+    margin-right: clamp(4px, 0.417vw, 8px);
   }
-
+  .btn_large {
+    flex: 1;
+    max-width: initial;
+    height: 120px;
+    height: clamp(80px, 6.25vw, 120px);
+    margin-right: 10px;
+    margin-right: clamp(6px, 0.521vw, 10px);
+    font-size: 40px;
+    font-size: clamp(26px, 2.083vw, 40px);
+    border-radius: 16px;
+    border-radius: clamp(8px, 0.833vw, 16px);
+  }
 
   /* 화상회의 팝업 */
   .conf_popup_box {
-    max-width: 62.5vw;
+    width: 62.5vw;
+    max-width: 1200px;
     min-height: initial;
-    padding: 50px 60px;
-    padding: clamp(30px, 2.604vw, 50px) clamp(40px, 3.125vw, 60px);
+    padding: 50px 60px 42px;
+    padding: clamp(30px, 2.604vw, 50px) clamp(40px, 3.125vw, 60px) clamp(30px, 2.188vw, 42px);
+    border-radius: 40px;
+    border-radius: clamp(20px, 1.736vw, 40px);
   }
   .conf_popup_header h3 {
     font-size: 40px;
     font-size: clamp(30px, 2.083vw, 40px);
   }
-
+  .btn_pop_close {
+    width: 48px;
+    width: clamp(30px, 2.5vw, 48px);
+    height: 48px;
+    height: clamp(30px, 2.5vw, 48px);
+  }
+  .btn_pop_close::before, .btn_pop_close::after {
+    width: 4px;
+    width: clamp(2px, 0.208vw, 4px);
+    height: 48px;
+    height: clamp(30px, 2.5vw, 48px);
+  }
+  .form_element {
+    margin-bottom: 40px;
+    margin-bottom: clamp(20px, 2.083vw, 40px);
+  }
+  .form_element + .btn_wrap {
+    padding-top: 10px;
+    padding-top: clamp(6px, 0.521vw, 10px);
+  }
+  .form_element.time {
+    grid-template-columns: 178px 221px 1fr;
+    grid-template-columns: clamp(120px, 9.375vw, 178px) clamp(160px, 12.5vw, 221px) 1fr;
+    gap: 16px;
+    gap: clamp(10px, 0.781vw, 16px);
+    align-items: center;
+  }
+  .form_element.col2 {
+    grid-template-columns: 178px 1fr;
+    grid-template-columns: clamp(120px, 9.375vw, 178px) 1fr;
+    gap: 16px;
+    gap: clamp(10px, 0.781vw, 16px);
+  }
+  .form_element.col2 .counter {
+    width: 15.989vw;
+    min-width: initial;
+    max-width: 307px;
+    margin-left: 0;
+    margin-right: auto;
+  }
+  .form_group {
+    margin-top: 0;
+  }
+  .time .form_label {
+    margin-bottom: 0;
+  }
   .input_text {
     height: 90px;
-    height: clamp(70px, 4.688vw, 90px);
+    height: clamp(60px, 4.688vw, 90px);
+    padding: 0 30px;
+    padding: 0 clamp(10px, 1.562vw, 30px);
     border-radius: 16px;
     border-radius: clamp(8px, 0.833vw, 16px);
     font-size: 30px;
     font-size: clamp(20px, 1.563vw, 30px);
+    line-height: 3;
+  }
+  .time .input_text {
+    height: 80px;
+    height: clamp(60px, 4.167vw, 80px);
+    padding: 0 24px;
+    padding: 0 clamp(10px, 1.562vw, 24px);
   }
   .input_counter {
-    height: 90px;
-    height: clamp(70px, 4.688vw, 90px);
+    height: 80px;
+    height: clamp(60px, 4.167vw, 80px);
     font-size: 30px;
     font-size: clamp(20px, 1.563vw, 30px);
   }
@@ -1720,13 +1797,21 @@ figure.fig_05 {
     min-width: 307px;
     min-width: clamp(200px, 15.989vw, 307px);
   }
-  .form_label {
+  .time_devider {
+    margin: 0 8px;
+    margin: 0 clamp(4px, 0.313vw, 8px);
     font-size: 30px;
     font-size: clamp(20px, 1.563vw, 30px);
   }
+  .form_label {
+    font-size: 30px;
+    font-size: clamp(20px, 1.563vw, 30px);
+    letter-spacing: -2px;
+    letter-spacing: clamp(-1px, -0.083vw, -2px);
+  }
   .btn_counter {
-    width: 80px;
-    width: clamp(60px, 5.208vw, 80px);
+    width: 88px;
+    width: clamp(60px, 4.583vw, 88px);
   }
   .btn_counter::after {
     width: 40px;
@@ -1742,11 +1827,85 @@ figure.fig_05 {
     border-radius: 0 16px 16px 0;
     border-radius: 0 clamp(8px, 0.833vw, 16px) clamp(8px, 0.833vw, 16px) 0;
   }
+
+  /* 캘린더 */
+  .conf_title {
+    font-size: 32px;
+    font-size: clamp(20px, 1.666vw, 32px);
+    letter-spacing: 0;
+  }
+  .header_prev_btn {
+    width: 160px;
+    height: 72px;
+    width: clamp(100px, 8.333vw, 160px);
+    height: clamp(40px, 3.75vw, 72px);
+    padding-left: 26px;
+    padding-left: clamp(16px, 1.25vw, 26px);
+    font-size: 26px;
+    font-size: clamp(16px, 1.354vw, 26px);
+    font-weight: 800;
+    line-height: 2.5;
+    text-align: left;
+    text-indent: 0;
+    text-align: center;
+    color: var(--color-text-200);
+    border-radius: 999px;
+    border: 1px solid var(--color-gray-300);
+    background-size: 40px;
+    background-size: clamp(26px, 2.083vw, 40px);
+    background-position: left 24px center;
+    background-position: left clamp(16px, 1.25vw, 24px) center;
+    background-image: url("../images/icon/ico_prev_40.svg");
+  }
+  .schedule_calendar {
+    max-width: 1820px;
+    width: 94.792vw;
+    margin: 40px auto;
+    margin: clamp(20px, 2.083vw, 40px) auto;
+  }
+  .sc_weekday {
+    height: 67px;
+    height: clamp(30px, 3.489vw, 67px);
+    padding: 0 24px;
+    padding: 0 clamp(10px, 0.781vw, 24px);
+  }
+  .sc_weekday h3 {
+    font-size: 24px;
+    font-size: clamp(16px, 1.25vw, 24px);
+  }
+  .sc_day {
+    flex-direction: row;
+    /* height: 138px;
+    height: clamp(80px, 7.188vw, 138px); */
+    height: auto;
+    padding: 16px 24px;
+    padding: clamp(10px, 0.833vw, 16px) clamp(10px, 1.25vw, 24px);
+  }
+  .day_num {
+    min-width: 30px;
+    min-width: clamp(20px, 1.563vw, 30px);
+    margin-bottom: 0;
+    margin-right: 24px;
+    margin-right: clamp(10px, 1.25vw, 24px);
+    font-size: 24px;
+    font-size: clamp(12px, 1.25vw, 24px);
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .event_item {
+    font-size: 18px;
+    font-size: clamp(12px, 0.938vw, 18px);
+    line-height: 1.25;
+  }
+  .event_item + .event_item {
+    margin-top: 10px;
+    margin-top: clamp(6px, 0.521vw, 10px);
+  }
 }
 
 /*-------------------------------
   Horizontal Layout: 1920 * 1080
 -------------------------------*/
-@media screen and (min-width: 1920px) {
-
+@media screen and (orientation: landscape) and (min-width: 1920px) {
+  /* 필요시 추가 */
 }

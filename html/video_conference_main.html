@@ -11,21 +11,30 @@
 
 <body>
     <div class="conf_wrapper">
-        <header class="conf_header">
-            <div class="conf_header_inner">
-              <h1 class="logo">
-                <span class="ci">광주시 북구</span>
-                <b>스마트경로당</b>
-              </h1>
-              <div class="header_item">
-                <button class="header_close_btn"><span class="a11yHidden">팝업닫기</span></button>
-              </div>
+      <header class="conf_header">
+          <div class="conf_header_inner">
+            <h1 class="logo">
+              <img src="../assets/images/icon/logo.svg" alt="광주시 북구">
+              <b>스마트경로당</b>
+            </h1>
+            <div class="header_item">
+              <button class="header_close_btn"><span class="a11yHidden">닫기</span></button>
             </div>
-          </header>
+          </div>
+        </header>
         <main class="conf_container">
-
+          <!-- 스케줄 목록 섹션 -->
           <section class="schedules_row">
-            <h2 class="schedule_title">2024년 12월 30일 월요일 </h2>
+            <h2 class="schedule_title">2024년 12월 30일 월요일</h2>
+            <!-- 
+            1. 스케줄 그리드 상태
+            .schedule_grid : 일정이 있는 경우
+            .schedule_grid.empty : 전체 빈 상태
+            
+            2. 개별 아이템 상태
+            .schedule_item : 일정이 있는 슬롯
+            .schedule_item.empty : 일정이 없는 빈 슬롯
+            -->
             <div class="schedule_grid">
               <article class="schedule_item">
                 <h3 class="si_title">광주 북구 경로당에서 생성한 회의</h3>
@@ -39,6 +48,7 @@
               <article class="schedule_item empty"></article>
             </div>
           </section>
+          <!-- 버튼 영역 -->
           <section class="controls_row">
             <div class="btn_wrap controls">
               <button class="btn_control btn_outline"><i class="ico_prev"></i>이전</button>
