@@ -1902,7 +1902,12 @@ figure.fig_06 {
     margin-top: clamp(6px, 0.521vw, 10px);
   }
 }
-
+.dataWrap {
+  position: relative;
+}
+.wrap{
+height: 100%;
+}
 /*-------------------------------
   Horizontal Layout: 1920 * 1080
 -------------------------------*/
