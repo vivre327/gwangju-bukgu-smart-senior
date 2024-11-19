@@ -492,18 +492,32 @@ body {
 .btn_control:last-child {
   margin-right: 0;
 }
-.btn_control.btn_outline {
+/* 2024.11.19 이전,다음 버튼 스타일 수정:s */
+.btn_control {
+  color: var(--color-white);
+  background-color: var(--color-primary-light);
+}
+.btn_control.btn_prev {
   justify-content: flex-start;
   padding-left: 24px;
 }
-.btn_control.btn_secondary {
+.btn_control.btn_next {
   justify-content: flex-end;
   padding-right: 24px;
 }
-.btn_control.btn_secondary [class*="ico_"] {
+.btn_control.disabled,
+.btn_control:disabled,
+.btn_control[disabled] {
+  color: var(--color-text-200);
+  border: 1px solid var(--color-gray-300);
+  background-color: var(--color-white);
+  pointer-events: none;
+}
+.btn_control.btn_next [class*="ico_"] {
   margin-right: 0;
   margin-left: 8px;
 }
+/* 2024.11.19 이전,다음 버튼 스타일 수정:e */
 .btn_large {
   height: 120px;
   margin-right: 16px;
@@ -543,7 +557,9 @@ body {
   margin-right: 8px;
 }
 .ico_prev {
-  background-image: url("../images/icon/ico_conf_prev.svg");
+  background-image: url("../images/icon/ico_conf_next.svg");
+  /* 2024.11.19 scaleX(-1) 추가 */
+  transform: scaleX(-1);
 }
 .ico_next {
   background-image: url("../images/icon/ico_conf_next.svg");
@@ -554,6 +570,20 @@ body {
 .ico_calendar {
   background-image: url("../images/icon/ico_conf_calendar.svg");
 }
+/* 2024.11.19 이전,다음 버튼 disabled 추가:s */
+.btn_prev.disabled .ico_prev,
+.btn_prev:disabled .ico_prev,
+.btn_prev[disabled] .ico_prev {
+  background-image: url("../images/icon/ico_conf_prev.svg");
+  transform: initial;
+}
+.btn_next.disabled .ico_next,
+.btn_next:disabled .ico_next,
+.btn_next[disabled] .ico_next {
+  background-image: url("../images/icon/ico_conf_prev.svg");
+  transform: scaleX(-1);
+}
+/* 2024.11.19 이전,다음 버튼 disabled 추가:e */
 
 /*----------------------
   Conference Popup
@@ -1007,11 +1037,13 @@ body {
     font-size: clamp(16px, 1.354vw, 26px);
     line-height: 8.5;
   }
-  .btn_control.btn_secondary {
+  /* 2024.11.19 클래스명 btn_secondary -> btn_next 수정 */
+  .btn_control.btn_next {
     padding-right: 24px;
     padding-right: clamp(16px, 1.25vw, 24px);
   }
-  .btn_control.btn_outline {
+  /* 2024.11.19 클래스명 btn_outline -> btn_prev 수정 */
+  .btn_control.btn_prev {
     padding-left: 24px;
     padding-left: clamp(16px, 1.25vw, 24px);
   }
@@ -1029,7 +1061,8 @@ body {
     height: 40px;
     height: clamp(20px, 2.083vw, 40px);
   }
-  .btn_control.btn_secondary [class*="ico_"] {
+  /* 2024.11.19 클래스명 btn_secondary -> btn_next 수정 */
+  .btn_control.btn_next [class*="ico_"] {
     margin-right: 0;
     margin-left: 4px;
     margin-left: clamp(2px, 0.208vw, 4px);

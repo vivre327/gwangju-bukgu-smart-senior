@@ -1,214 +1,127 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" href="../assets/css/style-ui.css" />
     <title>광주시 북구 스마트경로당</title>
-</head>
+  </head>
 
-<body>
-  <div class="conf_wrapper">
-    <header class="conf_header">
-      <div class="conf_header_inner">
-        <h1 class="logo">
-          <img src="../assets/images/icon/logo.svg" alt="광주시 북구">
-          <b>스마트경로당</b>
-        </h1>
-        <div class="header_item">
-          <button class="header_close_btn"><span class="a11yHidden">팝업닫기</span></button>
-        </div>
-      </div>
-    </header>
-    <main class="conf_container">
-      <section class="schedules_row">
-        <h2 class="schedule_title">2024년 12월 30일 월요일 </h2>
-        <div class="schedule_grid empty">
-        </div>
-      </section>
-      <section class="controls_row">
-        <div class="btn_wrap controls">
-          <button class="btn_control btn_outline"><i class="ico_prev"></i>이전</button>
-          <button class="btn_control btn_secondary">다음<i class="ico_next"></i></button>
-        </div>
-        <div class="btn_wrap actions">
-          <button class="btn_action btn_primary"><i class="ico_add"></i>화상 생성</button>
-          <button class="btn_action btn_primary"><i class="ico_calendar"></i>화상 스케줄</button>
-        </div>
-      </section>
-    </main>
-  </div>
-
-  <!-- 팝업(화상 회의 생성) -->
-  <article class="conf_popup mask_bg">
-    <div class="conf_popup_box">
-      <section class="conf_popup_header">
-        <h3>화상 회의 생성</h3>
-        <button type="button" class="btn_pop_close">
-          <span class="a11yHidden">팝업닫기</span>
-        </button>
-      </section>
-      <section class="conf_popup_content">
-
-        <!-- 회의제목 -->
-        <div class="form_element">
-          <label class="form_label a11yHidden" for="meeting-title">회의제목</label>
-          <div class="form_control">
-            <input 
-              type="text" 
-              id="meeting-title"
-              class="input_text" 
-              value="광주 북구 경로당에서 생성한 회의"
-              readonly
-              disabled
-            >
+  <body>
+    <div class="conf_wrapper">
+      <header class="conf_header">
+        <div class="conf_header_inner">
+          <h1 class="logo">
+            <img src="../assets/images/icon/logo.svg" alt="광주시 북구" />
+            <b>스마트경로당</b>
+          </h1>
+          <div class="header_item">
+            <button class="header_close_btn"><span class="a11yHidden">팝업닫기</span></button>
           </div>
         </div>
-
-        <!-- 시작시간 -->
-        <div class="form_element time">
-          <label class="form_label" for="selected-date">시작시간</label>
-          <div class="form_control">
-            <input 
-              type="text" 
-              id="selected-date" 
-              class="input_text" 
-              value="YYYY.MM.DD" 
-              readonly 
-              disabled
-            >
+      </header>
+      <main class="conf_container">
+        <section class="schedules_row">
+          <h2 class="schedule_title">2024년 12월 30일 월요일</h2>
+          <div class="schedule_grid empty"></div>
+        </section>
+        <section class="controls_row">
+          <div class="btn_wrap controls">
+            <button class="btn_control btn_prev disabled" disabled><i class="ico_prev"></i>이전</button>
+            <button class="btn_control btn_next disabled" disabled>다음<i class="ico_next"></i></button>
           </div>
-          <div class="form_group">
-            <!-- 시간 -->
-            <div class="form_control counter" role="spinbutton">
-              <button
-                type="button"
-                class="btn_counter btn_decrement"
-                title="감소"
-              >
-                <span class="a11yHidden">감소</span>
-              </button>
-              <input
-                id="hour-counter"
-                class="input_counter"
-                type="text"
-                readonly
-                value="12"
-                data-min="0"
-                data-max="23"
-                data-step="1"
-              >
-              <button
-                type="button"
-                class="btn_counter btn_increment"
-                title="증가"
-              >
-                <span class="a11yHidden">증가</span>
-              </button>
-            </div>
-
-            <p class="time_devider"> : </p>
-
-            <!-- 분 -->
-            <div class="form_control counter" role="spinbutton">
-              <button
-                type="button"
-                class="btn_counter btn_decrement"
-                title="감소"
-              >
-                <span class="a11yHidden">감소</span>
-              </button>
-              <input
-                id="minute-counter"
-                class="input_counter"
-                type="text"
-                readonly
-                value="00"
-                data-min="00"
-                data-max="59"
-                data-step="1"
-              >
-              <button
-                type="button"
-                class="btn_counter btn_increment"
-                title="증가"
-              >
-                <span class="a11yHidden">증가</span>
-              </button>
-            </div>
+          <div class="btn_wrap actions">
+            <button class="btn_action btn_primary"><i class="ico_add"></i>화상 생성</button>
+            <button class="btn_action btn_primary"><i class="ico_calendar"></i>화상 스케줄</button>
           </div>
-        </div>
-
-        <!-- 회의시간 -->
-        <div class="form_element col2">
-          <label class="form_label" for="meeting-duration">회의시간</label>
-          <div class="form_control counter" role="spinbutton">
-            <button 
-              type="button"
-              class="btn_counter btn_decrement" 
-              title="감소"
-            >
-              <span class="a11yHidden">감소</span>
-            </button>
-            <input 
-              id="meeting-duration" 
-              class="input_counter"
-              type="text"
-              readonly
-              value="1시간"
-              data-min="1"
-              data-max="3"
-              data-step="1"
-            >
-            <button 
-              type="button"
-              class="btn_counter btn_increment" 
-              title="증가"
-            >
-              <span class="a11yHidden">증가</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- 참여경로당수 -->
-        <div class="form_element col2">
-          <label class="form_label" for="center-count">참여경로당수</label>
-          <div class="form_control counter" role="spinbutton">
-            <button 
-              type="button"
-              class="btn_counter btn_decrement" 
-              title="감소"
-            >
-              <span class="a11yHidden">감소</span>
-            </button>
-            <input 
-              id="center-count" 
-              class="input_counter"
-              type="text"
-              readonly
-              value="30곳"
-              data-min="10"
-              data-max="30"
-              data-step="10"
-            >
-            <button 
-              type="button"
-              class="btn_counter btn_increment" 
-              title="증가"
-            >
-              <span class="a11yHidden">증가</span>
-            </button>
-          </div>
-        </div>
-        <div class="btn_wrap actions">
-          <button type="button" class="btn_action btn_default btn_large">취소</button>
-          <button type="submit" class="btn_action btn_primary btn_large">생성</button>
-        </div>
-      </section>
+        </section>
+      </main>
     </div>
-  </article>
-</body>
 
+    <!-- 팝업(화상 회의 생성) -->
+    <article class="conf_popup mask_bg">
+      <div class="conf_popup_box">
+        <section class="conf_popup_header">
+          <h3>화상 회의 생성</h3>
+          <button type="button" class="btn_pop_close">
+            <span class="a11yHidden">팝업닫기</span>
+          </button>
+        </section>
+        <section class="conf_popup_content">
+          <!-- 회의제목 -->
+          <div class="form_element">
+            <label class="form_label a11yHidden" for="meeting-title">회의제목</label>
+            <div class="form_control">
+              <input type="text" id="meeting-title" class="input_text" value="광주 북구 경로당에서 생성한 회의" readonly disabled />
+            </div>
+          </div>
+
+          <!-- 시작시간 -->
+          <div class="form_element time">
+            <label class="form_label" for="selected-date">시작시간</label>
+            <div class="form_control">
+              <input type="text" id="selected-date" class="input_text" value="YYYY.MM.DD" readonly disabled />
+            </div>
+            <div class="form_group">
+              <!-- 시간 -->
+              <div class="form_control counter" role="spinbutton">
+                <button type="button" class="btn_counter btn_decrement" title="감소">
+                  <span class="a11yHidden">감소</span>
+                </button>
+                <input id="hour-counter" class="input_counter" type="text" readonly value="12" data-min="0" data-max="23" data-step="1" />
+                <button type="button" class="btn_counter btn_increment" title="증가">
+                  <span class="a11yHidden">증가</span>
+                </button>
+              </div>
+
+              <p class="time_devider">:</p>
+
+              <!-- 분 -->
+              <div class="form_control counter" role="spinbutton">
+                <button type="button" class="btn_counter btn_decrement" title="감소">
+                  <span class="a11yHidden">감소</span>
+                </button>
+                <input id="minute-counter" class="input_counter" type="text" readonly value="00" data-min="00" data-max="59" data-step="1" />
+                <button type="button" class="btn_counter btn_increment" title="증가">
+                  <span class="a11yHidden">증가</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 회의시간 -->
+          <div class="form_element col2">
+            <label class="form_label" for="meeting-duration">회의시간</label>
+            <div class="form_control counter" role="spinbutton">
+              <button type="button" class="btn_counter btn_decrement" title="감소">
+                <span class="a11yHidden">감소</span>
+              </button>
+              <input id="meeting-duration" class="input_counter" type="text" readonly value="1시간" data-min="1" data-max="3" data-step="1" />
+              <button type="button" class="btn_counter btn_increment" title="증가">
+                <span class="a11yHidden">증가</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 참여경로당수 -->
+          <div class="form_element col2">
+            <label class="form_label" for="center-count">참여경로당수</label>
+            <div class="form_control counter" role="spinbutton">
+              <button type="button" class="btn_counter btn_decrement" title="감소">
+                <span class="a11yHidden">감소</span>
+              </button>
+              <input id="center-count" class="input_counter" type="text" readonly value="30곳" data-min="10" data-max="30" data-step="10" />
+              <button type="button" class="btn_counter btn_increment" title="증가">
+                <span class="a11yHidden">증가</span>
+              </button>
+            </div>
+          </div>
+          <div class="btn_wrap actions">
+            <button type="button" class="btn_action btn_default btn_large">취소</button>
+            <button type="submit" class="btn_action btn_primary btn_large">생성</button>
+          </div>
+        </section>
+      </div>
+    </article>
+  </body>
 </html>
