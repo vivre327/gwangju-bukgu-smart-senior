@@ -211,13 +211,11 @@ body {
   padding: 0;
   white-space: nowrap;
 }
-/* 2024.11.18 .wrapper ~ .option_btn.selected 삭제 */
 
 /*----------------------
   Conference Layout
 ----------------------*/
 /* Vertical Layout: 720 * 1280 */
-/* 2024.11.18 .wrap과 .datawrap 추가 */
 .wrap {
   height: 100%;
 }
@@ -284,25 +282,37 @@ body {
   position: relative;
   top: -10px;
 }
+/* 2024.11.22 헤더 닫기 버튼 수정:s */
 .header_close_btn {
-  display: inline;
-  width: 56px;
-  height: 56px;
+  display: flex;
   margin: 0;
   padding: 0;
   border: none;
-  background: none;
   text-align: inherit;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: -2px;
+  text-align: center;
+  color: var(--color-text-500);
+  background: none;
   text-decoration: none;
   outline: none;
   position: relative;
 }
-.header_close_btn::before,
-.header_close_btn::after {
+.ico_close {
+  display: inline-block;
+  width: 48px; 
+  height: 48px;
+  margin-left: 8px;
+  position: relative;
+}
+.ico_close::before,
+.ico_close::after {
   content: "";
   display: block;
   width: 4px;
-  height: 46px;
+  height: 39px;
   border-radius: 999px;
   background-color: var(--color-text-400);
   position: absolute;
@@ -310,12 +320,13 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.header_close_btn::before {
+.ico_close::before {
   transform: translate(-50%, -50%) rotate(45deg);
 }
-.header_close_btn::after {
+.ico_close::after {
   transform: translate(-50%, -50%) rotate(-45deg);
 }
+/* 헤더 닫기 버튼 수정:e */
 .header_prev_btn {
   display: inline;
   width: 56px;
@@ -444,9 +455,10 @@ body {
   padding-bottom: 60px;
 }
 
+/* 2024.11.22 이전,다음 버튼 크기 수정:s */
 /* Button Container */
 .btn_wrap + .btn_wrap {
-  margin-top: 60px;
+  margin-top: 32px;
 }
 .btn_wrap {
   display: flex;
@@ -458,12 +470,12 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 160px;
-  height: 72px;
-  margin-right: 10px;
+  width: 199px;
+  height: 100px;
+  margin-right: 16px;
   font-weight: 800;
-  font-size: 26px;
-  line-height: 2.808;
+  font-size: 30px;
+  line-height: 1;
   border-radius: 999px;
   border: none;
   text-decoration: none;
@@ -492,19 +504,19 @@ body {
 .btn_control:last-child {
   margin-right: 0;
 }
-/* 2024.11.19 이전,다음 버튼 스타일 수정:s */
 .btn_control {
   color: var(--color-white);
   background-color: var(--color-primary-light);
 }
 .btn_control.btn_prev {
   justify-content: flex-start;
-  padding-left: 24px;
+  padding-left: 48px;
 }
 .btn_control.btn_next {
   justify-content: flex-end;
-  padding-right: 24px;
+  padding-right: 48px;
 }
+/* 이전,다음 버튼 크기 수정:e */
 .btn_control.disabled,
 .btn_control:disabled,
 .btn_control[disabled] {
@@ -517,7 +529,6 @@ body {
   margin-right: 0;
   margin-left: 8px;
 }
-/* 2024.11.19 이전,다음 버튼 스타일 수정:e */
 .btn_large {
   height: 120px;
   margin-right: 16px;
@@ -558,7 +569,6 @@ body {
 }
 .ico_prev {
   background-image: url("../images/icon/ico_conf_next.svg");
-  /* 2024.11.19 scaleX(-1) 추가 */
   transform: scaleX(-1);
 }
 .ico_next {
@@ -570,7 +580,6 @@ body {
 .ico_calendar {
   background-image: url("../images/icon/ico_conf_calendar.svg");
 }
-/* 2024.11.19 이전,다음 버튼 disabled 추가:s */
 .btn_prev.disabled .ico_prev,
 .btn_prev:disabled .ico_prev,
 .btn_prev[disabled] .ico_prev {
@@ -583,7 +592,6 @@ body {
   background-image: url("../images/icon/ico_conf_prev.svg");
   transform: scaleX(-1);
 }
-/* 2024.11.19 이전,다음 버튼 disabled 추가:e */
 
 /*----------------------
   Conference Popup
@@ -945,25 +953,36 @@ body {
     font-size: clamp(26px, 2.083vw, 40px);
     top: 0;
   }
+  /* 2024.11.22 헤더 닫기 버튼 수정:s */
   .header_close_btn {
-    width: 72px;
-    width: clamp(40px, 3.75vw, 72px);
-    height: 72px;
-    height: clamp(40px, 3.75vw, 72px);
+    font-size: 40px;
+    font-size: clamp(26px, 2.083vw, 40px);
+    line-height: 48px;
+    line-height: clamp(32px, 2.5vw, 48px);
   }
-  .header_close_btn::before,
-  .header_close_btn::after {
+  .ico_close {
+    width: 48px;
+    width: clamp(28px, 2.5vw, 48px);
+    height: 48px;
+    height: clamp(28px, 2.5vw, 48px);
+    margin-left: 8px;
+    margin-left: clamp(4px, 0.417vw, 8px);
+  }
+  .ico_close::before,
+  .ico_close::after {
     width: 4px;
-    width: clamp(3px, 0.156vw, 4px);
-    height: 54px;
-    height: clamp(30px, 2.812vw, 54px);
+    width: clamp(2px, 0.208vw, 4px);
+    height: 41px;
+    height: clamp(27px, 2.135vw, 41px);
   }
   .conf_container {
     width: 89.583vw;
     max-width: 1720px;
     margin: 0 auto;
     padding: 0;
+    overflow-y: hidden;
   }
+  /* 2024.11.22 헤더 닫기 버튼 수정:e */
   .calendar .conf_container {
     width: 100%;
     max-width: initial;
@@ -1028,25 +1047,27 @@ body {
     max-width: 274px;
     border-radius: 999px;
   }
+/* 2024.11.22 이전,다음 버튼 크기 수정:s */
   .btn_control {
-    width: 120px;
-    height: 54px;
-    width: clamp(106px, 8.333vw, 160px);
-    height: clamp(48px, 3.75vw, 72px);
-    font-size: 26px;
-    font-size: clamp(16px, 1.354vw, 26px);
+    width: 199px;
+    height: 100px;
+    width: clamp(132px, 10.365vw, 199px);
+    height: clamp(66px, 5.205vw, 100px);
+    margin-right: 16px;
+    margin-right: clamp(10px, 0.833vw, 16px);
+    font-size: 30px;
+    font-size: clamp(20px, 1.563vw, 30px);
     line-height: 8.5;
   }
-  /* 2024.11.19 클래스명 btn_secondary -> btn_next 수정 */
   .btn_control.btn_next {
-    padding-right: 24px;
-    padding-right: clamp(16px, 1.25vw, 24px);
+    padding-right: 48px;
+    padding-right: clamp(28px, 2.5vw, 48px);
   }
-  /* 2024.11.19 클래스명 btn_outline -> btn_prev 수정 */
   .btn_control.btn_prev {
-    padding-left: 24px;
-    padding-left: clamp(16px, 1.25vw, 24px);
+    padding-left: 48px;
+    padding-left: clamp(28px, 2.5vw, 48px);
   }
+/* 이전,다음 버튼 크기 수정:e */
   [class*="btn_"] [class*="ico_"] {
     width: 40px;
     width: clamp(26px, 2.083vw, 40px);
@@ -1061,7 +1082,6 @@ body {
     height: 40px;
     height: clamp(20px, 2.083vw, 40px);
   }
-  /* 2024.11.19 클래스명 btn_secondary -> btn_next 수정 */
   .btn_control.btn_next [class*="ico_"] {
     margin-right: 0;
     margin-left: 4px;
@@ -1072,7 +1092,7 @@ body {
     width: 273px;
     width: clamp(182px, 14.218vw, 273px);
     height: 100px;
-    height: clamp(70px, 5.313vw, 100px);
+    height: clamp(66px, 5.208vw, 100px);
     font-size: 30px;
     font-size: clamp(20px, 1.563vw, 30px);
   }
@@ -1286,14 +1306,6 @@ body {
     margin-top: clamp(6px, 0.521vw, 10px);
   }
 }
-/* 2024.11.18 삭제(상단으로 이동)
-.wrap {
-  height: 100%;
-}
-.dataWrap {
-  height: 100%;
-  position: relative;
-} */
 
 /*-------------------------------
   Horizontal Layout: 1920 * 1080
