@@ -636,38 +636,7 @@ body {
   letter-spacing: -2px;
   text-align: left;
 }
-.btn_pop_close {
-  display: inline;
-  width: 48px;
-  height: 48px;
-  margin: 0;
-  padding: 0;
-  border: none;
-  background: none;
-  text-align: inherit;
-  text-decoration: none;
-  outline: none;
-  position: relative;
-}
-.btn_pop_close::before,
-.btn_pop_close::after {
-  content: "";
-  display: block;
-  width: 4px;
-  height: 46px;
-  border-radius: 999px;
-  background-color: var(--color-text-400);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.btn_pop_close::before {
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-.btn_pop_close::after {
-  transform: translate(-50%, -50%) rotate(-45deg);
-}
+/* 2024.11.22 .btn_pop_close ~ .btn_pop_close::after 삭제 */
 .conf_popup_content {
   padding-top: 0px;
 }
